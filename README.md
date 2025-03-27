@@ -1,3 +1,9 @@
+Liste des membres du groupe :
+- Imane Iguederzen
+- Imen Khlifi
+- Sarah Ponnourangame
+- Nermine Khadhraoui
+
 # **Cahier des Charges 📕**
 
 **Mini Cahier des Charges – Outil Simplifié de Suivi des Candidatures**
