@@ -21,7 +21,7 @@ const Form = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  } 
 
   return (
     <div>
