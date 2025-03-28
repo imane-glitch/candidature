@@ -1,9 +1,7 @@
 import { Outlet } from "react-router-dom";
 import React from "react";
 
-import Header from "./Header";
-import Footer from "./Footer";
-
+import Header from "./Header.jsx";
 const Layout = () => {
   return (
     <main>
@@ -13,9 +11,6 @@ const Layout = () => {
       <section>
         <Outlet />
       </section>
-      <footer>
-        <Footer />
-      </footer>
     </main>
   );
 };
