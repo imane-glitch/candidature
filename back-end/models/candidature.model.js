@@ -5,7 +5,7 @@ const candidatureSchema = mongoose.Schema (
         entreprise: {
             type: String,
             minLength: 3,
-            require: true
+            required: true
         },
         status: {
             type: String,

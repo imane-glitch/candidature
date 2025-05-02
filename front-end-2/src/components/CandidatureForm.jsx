@@ -1,12 +1,12 @@
-import { useState } from "react";
+ import { useState } from "react";
 import "./CandidatureForm.css"; 
 const CandidatureForm = ({ addCandidature }) => {
   const [formData, setFormData] = useState({
     entreprise: "",
-    poste: "",
+    post: "",
     lien: "",
     date: new Date().toISOString().split("T")[0], 
-    statut: "En attente",
+    status: "En attente",
   });
 
   const handleChange = (e) => {
@@ -18,10 +18,10 @@ const CandidatureForm = ({ addCandidature }) => {
     addCandidature(formData);
     setFormData({
       entreprise: "",
-      poste: "",
+      post: "",
       lien: "",
       date: new Date().toISOString().split("T")[0],
-      statut: "En attente",
+      status: "En attente",
     });
   };
 
@@ -41,13 +41,13 @@ const CandidatureForm = ({ addCandidature }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="poste"></label>
+        <label htmlFor="post"></label>
         <input
           type="text"
-          name="poste"
-          id="poste"
+          name="post"
+          id="post"
           placeholder="Nom du poste"
-          value={formData.poste}
+          value={formData.post}
           onChange={handleChange}
           required
         />
@@ -79,17 +79,17 @@ const CandidatureForm = ({ addCandidature }) => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="statut"></label>
+        <label htmlFor="status"></label>
         <select
-          name="statut"
-          id="statut"
-          value={formData.statut}
+          name="status"
+          id="status"
+          value={formData.status}
           onChange={handleChange}
-          className={`statut-${formData.statut.toLowerCase()}`}
+          className={`statut-${formData.status.toLowerCase()}`}
         >
           <option value="En attente">En attente</option>
-          <option value="Acceptée">Acceptée</option>
-          <option value="Refusée">Refusée</option>
+          <option value="Accepté">Accepté</option>
+          <option value="Refusé">Refusé</option>
         </select>
       </div>
 
