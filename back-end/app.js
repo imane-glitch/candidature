@@ -19,7 +19,12 @@ app.use(express.json())
 app.use('/api/candidatures', candidatureRouter);
 // app.use('/api/statistiques');
 
+// Add root route handler to fix "error cannot get"
+app.get('/', (req, res) => {
+    res.send('API is running');
+});
+
 export default app
 
 
-// un module est liée a une table 
+// un module est liée a une table  

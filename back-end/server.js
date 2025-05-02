@@ -3,7 +3,7 @@ import ENV from './config/env.js'
 
 
 // PORT 
-const PORT = ENV.PORT || 8080;
+const PORT = ENV.PORT || 5173;
 
 // LISTEN 
 app.listen(PORT, () => {
