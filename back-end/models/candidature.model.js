@@ -12,8 +12,16 @@ const candidatureSchema = mongoose.Schema (
             enum: ['En attente', 'Accepté', 'Refusé'],
             default: 'En attente'
         },
-     
-    } , {
+        post: {
+            type: String,
+            required: true
+        },
+        date: {
+            type: Date,
+            required: true,
+            default: Date.now
+        },    
+    }, {
         timestamps: true
     }
 
