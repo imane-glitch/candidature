@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Form from "./pages/Form";
 import Statistics from "./pages/Statistics";
+import SuiviRelances from "./pages/SuiviRelances";
 
 function App() {
   const [candidatures, setCandidatures] = useState([]);
@@ -60,10 +61,15 @@ function App() {
             />
           } 
         />
-        <Route path="post" element={<Form />} />
+        <Route path="post" element={<Form addCandidature={addCandidature} />} />
+        <Route path="modifier/:id" element={<Form addCandidature={addCandidature} />} />
         <Route 
           path="statistiques" 
           element={<Statistics candidatures={candidatures} />} 
+        />
+        <Route 
+          path="suivi-relances" 
+          element={<SuiviRelances candidatures={candidatures} />} 
         />
         <Route path="*" element={<NotFound />} />
       </Route>
