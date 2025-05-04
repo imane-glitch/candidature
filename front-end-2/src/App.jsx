@@ -69,7 +69,7 @@ function App() {
         />
         <Route 
           path="suivi-relances" 
-          element={<SuiviRelances candidatures={candidatures} />} 
+          element={<SuiviRelances candidatures={candidatures} updateCandidatureStatus={updateCandidatureStatus} />} 
         />
         <Route path="*" element={<NotFound />} />
       </Route>

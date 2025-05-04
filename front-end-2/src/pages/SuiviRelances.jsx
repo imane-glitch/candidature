@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import CandidatureList from '../components/CandidatureList';
+import './SuiviRelances.css';
 
-const SuiviRelances = () => {
+const SuiviRelances = ({ candidatures, updateCandidatureStatus }) => {
+  const [localCandidatures, setLocalCandidatures] = useState(candidatures || []);
+
+  useEffect(() => {
+    setLocalCandidatures(candidatures || []);
+  }, [candidatures]);
+
+  // Filter candidatures including only those with status "En attente"
+  const candidaturesARelancer = localCandidatures.filter(c => (c.status || 'En attente') === 'En attente');
+
   return (
-    <div style={{
-      maxWidth: '600px',
-      margin: '40px auto',
-      padding: '20px',
-      backgroundColor: '#e0f7fa',
-      borderRadius: '15px',
-      boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-      fontSize: '18px',
-      color: '#00796b',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '12px'
-    }}>
-      <span role="img" aria-label="bulle de discussion" style={{ fontSize: '24px' }}>🔔</span>
-      <span>N&apos;oublie pas de relancer</span>
+    <div className="suivi-container">
+      <div className="suivi-message-box">
+        <span role="img" aria-label="bulle de discussion">🔔</span>
+        <span>N&apos;oublie pas de relancer</span>
+      </div>
+
+      <h2 className="section-title">A relancer</h2>
+      <div className="stats-page">
+        <CandidatureList 
+          candidatures={candidaturesARelancer} 
+          onStatusChange={updateCandidatureStatus} 
+        />
+      </div>
     </div>
   );
 };
